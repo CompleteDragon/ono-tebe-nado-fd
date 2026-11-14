@@ -68,7 +68,7 @@
   margin: 0;
 }
 
-/* Стили для обложки (.cover) */
+/* Стили для обложки (.cover) — строго по размерам Figma (Y: 293, H: 757) */
 .cover {
   position: relative;
   padding: 165px 50px 50px;
@@ -122,9 +122,8 @@
   position: relative;
   z-index: 2;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  gap: 79px;
 }
 
 .cover__description-text {
@@ -146,7 +145,7 @@
   cursor: pointer;
 }
 
-/* Стили для секции лотов (.lots) */
+/* Стили для секции лотов (.lots) — строго по Y = 1230 в Figma */
 .lots {
   padding: 180px 50px 0;
 }
@@ -226,12 +225,12 @@
   line-height: 1.2;
   color: #000;
   text-decoration: underline;
-  margin-left: 40px;
+  margin-left: 0;
 }
 
-/* Стили для секции «Об аукционе»*/
+/* Стили для секции «Об аукционе» — строго по Y = 2061 в Figma */
 .about {
-  padding: 155px 50px 0;
+  padding: 236px 50px 0;
   display: grid;
   grid-template-columns: 334px 1fr;
   gap: 25px;
