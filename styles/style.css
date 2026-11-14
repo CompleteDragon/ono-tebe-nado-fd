@@ -1,4 +1,4 @@
-/* Стили для шапки сайта */
+/* ===== Шапка ===== */
 .header {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
@@ -16,8 +16,6 @@
   display: flex;
   gap: 32px;
   list-style: circle;
-  margin: 0;
-  padding: 0;
 }
 
 .header__links-list-item_no-bullit {
@@ -42,35 +40,44 @@
 }
 
 .header__logo-image {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
 }
 
-.header__address {
-  justify-self: end;
+/* Адрес (общий для шапки и подвала) */
+.address {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 240px;
+  width: 240px;
   font-style: normal;
+  font-size: 18px;
   line-height: 1.35;
   text-align: left;
 }
 
-.header__address a {
+.address a {
   color: #000;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-.header__address p {
-  margin: 0;
+.header__address {
+  justify-self: end;
 }
 
-/* Стили для обложки (.cover) — строго по размерам Figma (Y: 293, H: 757) */
+/* ===== Оверлей (обложка и карточки) ===== */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Обложка ===== */
 .cover {
   position: relative;
+  min-height: 757px;
   padding: 165px 50px 50px;
   background-image: url('../images/cover.jpg');
   background-size: cover;
@@ -79,20 +86,12 @@
   color: #fff;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
 .cover__title {
   position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin: 0 0 100px;
+  margin: 0 0 106px;
   font-weight: 700;
   font-size: 100px;
   line-height: 1.15;
@@ -104,14 +103,16 @@
   display: block;
 }
 
+.aligned-text_left {
+  text-align: left;
+}
+
 .aligned-text_center {
   text-align: center;
-  line-height: 1;
 }
 
 .aligned-text_right {
   text-align: right;
-  line-height: 1;
 }
 
 .no-letter-spacing {
@@ -120,77 +121,77 @@
 
 .cover__description {
   position: relative;
-  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .cover__description-text {
-  margin: 0;
   font-size: 22px;
+  font-weight: 400;
   line-height: 1.27;
   text-transform: uppercase;
-  word-spacing: 18px;
+  word-spacing: 18.5px;
 }
 
-.cover__btn {
+.bet-button {
   padding: 12px 32px;
   border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
   font-family: Raleway;
   font-size: 22px;
+  font-weight: 400;
+  line-height: 25px;
   text-transform: uppercase;
   cursor: pointer;
 }
 
-/* Стили для секции лотов (.lots) — строго по Y = 1230 в Figma */
+/* ===== Лоты ===== */
 .lots {
-  padding: 180px 50px 0;
+  padding: 180px 24px 0;
 }
 
 .lots__heading {
+  margin: 0 0 27px 40px;
   font-size: 40px;
-  line-height: 1.1;
+  font-weight: 700;
+  line-height: 1.17;
   text-transform: uppercase;
-  margin: 0 0 27px;
 }
 
 .lots__card-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 25px;
+  margin-bottom: 30px;
   list-style: none;
-  margin: 0 0 30px;
-  padding: 0;
 }
 
 .lots__card-list-item {
-  flex: 1;
+  width: 334px;
   min-height: 596px;
 }
 
 .card-link {
-  text-decoration: none;
-  color: inherit;
   display: block;
   height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card {
   position: relative;
-  box-sizing: border-box;
-  height: 100%;
-  padding: 50px 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
+  padding: 48px 40px;
   background-size: cover;
   background-position: center;
   color: #fff;
 }
 
-/* Фоновые картинки для каждого типа карточки */
 .card_type_film {
   background-image: url('../images/card-lot-01.jpg');
 }
@@ -204,113 +205,96 @@
 }
 
 .card__title {
+  position: relative;
   font-size: 22px;
+  font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
   text-decoration: underline;
-  margin: 0;
-  z-index: 2;
 }
 
 .card__text {
+  position: relative;
   font-size: 20px;
+  font-weight: 400;
   line-height: 1.2;
-  margin: 0;
-  z-index: 2;
 }
 
 .lots__look-more-link {
   display: block;
+  width: max-content;
+  margin-left: 40px;
   font-size: 18px;
   line-height: 1.2;
   color: #000;
   text-decoration: underline;
-  margin-left: 0;
+  text-underline-offset: 4px;
 }
 
-/* Стили для секции «Об аукционе» — строго по Y = 2061 в Figma */
+/* ===== Об аукционе ===== */
 .about {
-  padding: 236px 50px 0;
   display: grid;
   grid-template-columns: 334px 1fr;
   gap: 25px;
   align-items: start;
+  padding: 144px 24px 0;
 }
 
 .about__column {
-  padding-top: 136px;
+  padding-top: 102px;
+}
+
+.about__column_logo {
+  display: flex;
+  justify-content: center;
+  padding-top: 0;
+}
+
+.about__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.about__logo-image {
+  display: block;
+  width: 148px;
+  height: 105px;
 }
 
 .about__title {
-  font-weight: 700;
+  margin-bottom: 100px;
   font-size: 40px;
+  font-weight: 700;
   line-height: 1.17;
   text-transform: uppercase;
-  margin: 0 0 100px;
 }
 
 .about__text {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 693px;
-}
-
-.about__text p {
+  max-width: 690px;
   font-size: 20px;
+  font-weight: 400;
   line-height: 1.2;
-  margin: 0;
 }
 
-.about__column_logo {
-  display: flex;
-  justify-content: center;
-  padding-top: 35px;
-}
-
-.about__logo {
-  width: 240px;
-  height: 240px;
-  background-color: #000;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.about__logo-image {
-  width: 148px;
-  height: 114px;
-  display: block;
-}
-
-/* Стили для подвала сайта (.footer) */
+/* ===== Подвал ===== */
 .footer {
-  padding: 180px 50px 88px;
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: start;
+  padding: 194px 50px 81px;
   font-size: 18px;
 }
 
 .footer__address {
   justify-self: start;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 240px;
-  font-style: normal;
-  line-height: 1.35;
-}
-
-.footer__address a {
-  color: #000;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.footer__address p {
-  margin: 0;
 }
 
 .footer__menu {
@@ -322,17 +306,13 @@
 .footer__menu-list {
   display: flex;
   flex-direction: column;
-  gap: 2px;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .footer__menu-link {
+  color: #000;
   text-decoration: underline;
   text-underline-offset: 4px;
-  color: #000;
-  font-size: 18px;
 }
 
 .footer__menu-link_active {
@@ -344,8 +324,6 @@
   display: flex;
   gap: 48px;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .footer__social-link {
@@ -355,7 +333,7 @@
 }
 
 .footer__social-icon {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
 }
